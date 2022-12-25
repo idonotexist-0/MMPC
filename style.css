@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+}
+
+.root-header {
+    position: fixed;
+    background-color: black;
+}
+
+/* This is the nav div include: global-logo, global-elements */
+.root-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #171615;
+}
+
+/* Hamburger */
+.global-elements .icon {
+    display: none;
+}
+
+/* This is the logo-link div include: a > img */
+.global-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.global-logo a img {
+    margin: 8px 0;
+    width: 25%;
+    min-width: 200px;
+}
+
+/* global-elements, get-minecraft */
+.global-elements {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.get-minecraft {
+    margin-left: auto;
+}
+
+.global-elements a,
+.get-minecraft a,
+.dropbtn {
+    padding: 16px 16px;
+    display: block;
+    background-color: inherit;
+    color: white;
+    border: none;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 720;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.global-elements a:hover,
+.dropbtn:hover {
+    color: rgb(160, 224, 128);
+}
+
+.get-minecraft a:hover {
+    color: white;
+}
+
+.get-minecraft a {
+    color: rgb(160, 224, 128);
+}
+
+/* Dropdown content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: #171615;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.dropdown-element:hover .dropdown-content {
+    display: block;
+    transform: translateY(0);
+}
+
+
+.dropdown-content.show {
+    display: block;
+}
+
+.dropdown-content a {
+    background-color: black;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: rgb(160, 224, 128);
+    color: #171615;
+}
+
+
+/* Root-Content */
+.root-content {
+    margin: 0;
+    padding-top: 10%;
+}
+
+@media screen and (min-width: 1200px) {
+    .root-header {
+        width: 100%;
+    }
+
+    .root-nav {
+        margin: 0;
+        padding: 8px;
+    }
+
+    .global-elements {
+        margin-left: 32px;
+    }
+
+    .get-minecraft {
+        margin-right: 32px;
+        background-color: rgb(40, 129, 35);
+        box-sizing: border-box;
+        border-top: 5px solid rgb(160, 224, 128);
+        border-bottom: 5px solid rgb(42, 99, 28);
+    }
+
+    .get-minecraft a {
+        font-size: 1.125rem;
+        color: white;
+    }
+
+    .global-logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .global-logo a img {
+        margin: 8px 0;
+        width: 300px;
+    }
+}
+
+
+/* screen goes under 600px */
+@media screen and (max-width: 600px) {
+    .root-header {
+        width: 100%;
+    }
+    /* making the nav bar column */
+    .global-elements {
+        flex-direction: column;
+        width: auto;
+    }
+
+    /* desappearing nav */
+    .global-elements a,
+    .global-elements button,
+    .get-minecraft a {
+        display: none;
+    }
+
+    /* Making icon appear */
+    .global-elements .icon {
+        display: block;
+    }
+
+    .global-elements.responsive, .get-minecraft.responsive {
+        align-items: flex-start;
+        position: relative;
+    }
+
+    .global-elements.responsive a, .global-elements.responsive button ,.get-minecraft.responsive a{
+        display: block;
+        text-align: left;
+    }
+
+    .global-logo {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+}
